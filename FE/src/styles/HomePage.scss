@@ -1,0 +1,78 @@
+.homepage {
+  padding: 24px;
+  color: black;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+
+    .stats-card {
+      background: #0f73f5f5;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+      padding: 16px;
+      text-align: center;
+      
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 8px;
+      }
+
+      .value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .map-section,
+  .chart-section {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 16px;
+    margin-bottom: 24px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+  }
+
+  .map-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    height: 150px;
+
+    .zone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #dbeafe;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        background: #3b82f6;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+/* src/styles/StaffList.scss */
+
+.staff-list-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff; /* nền toàn trang trắng */
+  color: #333;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px; /* ⬅️ tăng khoảng cách dưới tiêu đề */
+    color: #111;
+  }
+
+  /* chọn số dòng hiển thị */
+  .pagination-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    }
+
+  /* ô tìm kiếm */
+  .staff-filters {
+    margin-bottom: 24px; /* ⬅️ tạo thêm khoảng cách với bảng */
+    display: flex;
+    justify-content: flex-end;
+
+    .search-input {
+      width: 340px; /* dài hơn mặc định */
+      max-width: 420px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #0ea5e9;
+        outline: none;
+      }
+    }
+  }
+
+  /* bảng danh sách */
+  .staff-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+
+    thead tr {
+      background-color: #DBEAFE; /* header xanh nhạt */
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      color: #333;
+    }
+
+    th {
+      cursor: pointer;
+      position: relative;
+      font-weight: 600;
+      color: #1f2937;
+
+      svg {
+        margin-left: 4px;
+        width: 12px;
+        height: 12px;
+        color: #999;
+        vertical-align: middle;
+
+        &.active {
+          color: #0ea5e9;
+        }
+      }
+
+      &:hover {
+        background-color: #dbeafe;
+      }
+    }
+
+    tbody tr {
+      &:nth-child(even) {
+        background-color: #f9fafb;
+      }
+
+      &:hover {
+        background-color: #f1f5f9;
+      }
+    }
+
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #3b82f6;
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+  }
+
+  .error {
+    color: red;
+    margin-bottom: 12px;
+  }
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .staff-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

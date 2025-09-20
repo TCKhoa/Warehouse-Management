@@ -1,0 +1,17 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh; // hoặc min-height: 100vh
+}
+
+
+.main {
+  flex: 1;
+  background-color: #1e293b;
+  color: white;
+  padding: 1.5rem;
+}

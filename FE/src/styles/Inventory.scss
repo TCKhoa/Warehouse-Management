@@ -1,0 +1,249 @@
+.inventory-page {
+  padding: 24px;
+  background-color: #f9fafb;
+  min-height: 85vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111827;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 5px; // 👈 tăng khoảng cách dưới h2
+  }
+
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px; // 👈 khoảng cách với .filters
+
+    .right {
+      button {
+        padding: 10px 16px;
+        background-color: #3b82f6;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #2563eb;
+        }
+      }
+    }
+  }
+    .top-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; // khoảng cách giữa pagination-control và filters
+    margin-bottom: 20px;
+
+    .pagination-control {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      label {
+        font-size: 14px;
+        color: #1f2937;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        select {
+          padding: 6px 10px;
+          border: 1px solid #d1d5db;
+          border-radius: 4px;
+          background-color: #fff;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    
+    .filter-left {
+      display: flex;
+      gap: 15px;
+    }
+
+    .search-box,
+    .category-select {
+      padding: 10px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background-color: #ffffff;
+      font-size: 14px;
+      color: #111827;
+      min-width: 220px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+      &:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+
+    thead {
+      tr {
+        background-color: #DBEAFE;
+      }
+
+      th {
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1f2937;
+        border-bottom: 1px solid #d1d5db;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          background-color: #dbeafe;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #f9fafb;
+        }
+
+        &:hover {
+          background-color: #f1f5f9;
+        }
+
+        td {
+          text-align: center;
+          padding: 12px;
+          font-size: 14px;
+          color: #000000;
+          border-bottom: 1px solid #e5e7eb;
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    table {
+      font-size: 13px;
+
+      th,
+      td {
+        padding: 10px;
+      }
+    }
+  }
+}
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+
+    button {
+      padding: 6px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      background-color: #ffffff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #f3f4f6;
+      }
+
+      &.active {
+        background-color: #3b82f6;
+        color: #ffffff;
+        border-color: #3b82f6;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Action buttons (edit/delete)
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &.edit {
+        background-color: #fbbf24; // vàng
+        color: #fff;
+
+        &:hover {
+          background-color: #f59e0b;
+        }
+      }
+
+      &.delete {
+        background-color: #ef4444; // đỏ
+        color: #fff;
+
+        &:hover {
+          background-color: #dc2626;
+        }
+      }
+    }
+  }
+
+  // Empty state (không có dữ liệu)
+  .empty-state {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 15px;
+    color: #6b7280;
+    font-style: italic;
+  }
